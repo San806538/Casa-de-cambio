@@ -18,6 +18,21 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult calcular(double cantidad, int opcion){
+        double cantCambiado = 0;
+        if(cantidad!=null){
+            if(opcion==1){
+                cantCambiado = cantidad *0.6338236;
+            }else if(opcion == 2){
+                cantCambiado = cantidad*1.577726;
+            }
+        }
+        ViewBag.cantCambio = cantCambiado;
+        ViewBag.cantidad = cantidad;
+        return View("Index");
+    }
+
     public IActionResult Privacy()
     {
         return View();
