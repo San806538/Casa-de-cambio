@@ -1,8 +1,69 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Casa de Cambio";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-8">
+                    <div><h2>La casa de cambio online líder del Perú</h2></div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div><h6>Celebramos un nuevo récord: 6 mil millones de dólares cambiados para nuestros clientes</h6></div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <div><img src="https://static.vecteezy.com/system/resources/previews/020/336/392/non_2x/visa-logo-visa-icon-free-free-vector.jpg" width="100%" height="auto"></div>
+                </div>
+                <div class="col-4">
+                    <div><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/RPP_logo.png" width="50%" height="auto"></div>
+                </div>
+                <div class="col-4">
+                    <div><img src="https://1000marcas.net/wp-content/uploads/2020/07/logo-Citigroup.png" width="65%" height="auto"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col">
+                    <div class="text-center"><h3>Cambio de Moneda</h3></div>
+                    <br>
+                    <div><h5>BRL 1.00 = 0.634 PEN</h5></div>
+                    <form asp-controller="Home" asp-action="calcular">
+                        <div style="width: 50%;"><input type="number" value="@(ViewBag.cantidad ?? "")" name="cantidad" class="form-control" placeholder="Canitdad a convertir"></div>
+                        <br>
+                        <div><h4>Opcion de cambio </h4></div>
+                        <div style="width: 70%;">
+                            <select name="opcion" class="form-select">
+                                <option value="1">De: BRL - A: PEN</option>
+                                <option value="2">De: PEN - A: BRL</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="text-center"><input type="submit" value="CALCULAR" class="btn btn-success"></div>
+                    </form>
+                    @if(@ViewBag.cantCambio!=null){
+                        <br>
+                        <div class="row">
+                            <div class="col-4"><h5>Divisa cambiada:</h5></div>
+                            <div class="col"><h5>@ViewBag.cantCambio</h5></div>
+                        </div>
+                    }
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
