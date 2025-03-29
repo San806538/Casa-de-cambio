@@ -28,11 +28,17 @@ public class HomeController : Controller
                 cantCambiado = cantidad*1.577726;
             }
         }
-        ViewBag.cantCambio = cantCambiado;
+        ViewBag.cantCambio = Math.Round(cantCambiado, 2);;
         ViewBag.cantidad = cantidad;
         return View("Index");
     }
 
+    public IActionResult generarBoleta(double cantidad,double cantCambiado){
+        ViewBag.cantCambio = cantCambiado;
+        ViewBag.cantidad = cantidad;
+    
+        return View("GenerarBoleta");       
+    }
     public IActionResult Privacy()
     {
         return View();

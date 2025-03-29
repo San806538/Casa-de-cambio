@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Casa de Cambio";
+}
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-2"><h5>Divisa cambiada:</h5></div>
+       <div class="col"><h5>@ViewBag.cantCambio</h5></div>
+    </div>
+    <br>
+    <div class="row">
+        <form>
+            <div class="col-4">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" name="nombre" class="form-control" id="nombre">
+            </div>
+            <br>
+            <div class="col-4">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" name="apellido" class="form-control" id="apellido">
+            </div>
+            <br>
+            <div class="col-4">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" name="correo" class="form-control" id="correo">
+            </div>
+            <br>
+            <div class="col-4">
+                <label for="celular" class="form-label">Celular</label>
+                <input type="tel" name="celular" class="form-control" id="celular">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">GENERAR BOLETA</button>
+        </form>
+    </div>
+</div>
